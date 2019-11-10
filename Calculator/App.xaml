@@ -4,6 +4,54 @@
              xmlns:local="clr-namespace:Calculator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="numbersColor" Color="#52524E" />
+        <SolidColorBrush x:Key="numbersColorHover" Color="#8c8c85" />
+        <SolidColorBrush x:Key="operatorsColor" Color="#FF9243" />
+        <SolidColorBrush x:Key="operatorsColorHover" Color="#fc9f5b" />
+        <SolidColorBrush x:Key="functionsColor" Color="#9A9B94" />
+        <SolidColorBrush x:Key="functionsColorHover" Color="#d5d6cb" />
+        
+        <Style TargetType="Button" x:Key="defaultBtn">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#2b2b2b"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="numbersBtnStyle" BasedOn="{StaticResource defaultBtn}">
+            <Setter Property="Background" Value="{StaticResource numbersColor}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource numbersColorHover}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" x:Key="operatorsBtnStyle" BasedOn="{StaticResource defaultBtn}">
+            <Setter Property="Background" Value="{StaticResource operatorsColor}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource operatorsColorHover}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" x:Key="functionsBtnStyle" BasedOn="{StaticResource defaultBtn}">
+            <Setter Property="Background" Value="{StaticResource functionsColor}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource functionsColorHover}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

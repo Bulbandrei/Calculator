@@ -85,7 +85,7 @@ namespace Calculator
 
         private void PointBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!resultLabel.ToString().Contains('.'))
+            if (!resultLabel.Content.ToString().Contains('.'))
                 resultLabel.Content = $"{resultLabel.Content}.";
         }
 
